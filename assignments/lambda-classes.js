@@ -1,7 +1,11 @@
 // CODE here for your Lambda Classes
 
+/////////////////////////////
+// First build the classes //
+/////////////////////////////
+
 class Person {
-    constructor(personAttributes){
+    constructor(personAttributes) {
         this.name = personAttributes.name;
         this.age = personAttributes.age;
         this.location = personAttributes.location;
@@ -13,13 +17,13 @@ class Person {
 }
 
 class Instructor extends Person {
-    constructor(instAttributes){
+    constructor(instAttributes) {
         super(instAttributes);
         this.specialty = instAttributes.specialty;
         this.favLanguage = instAttributes.favLanguage;
     }
-    
-    demo(subject){
+
+    demo(subject) {
         console.log(`Today we are learning about ${subject}`);
     }
 
@@ -29,22 +33,26 @@ class Instructor extends Person {
 }
 
 class Student extends Person {
-    constructor(studAttributes){
+    constructor(studAttributes) {
         super(studAttributes);
         this.previousBackground = studAttributes.previousBackground;
         this.className = studAttributes.className;
         this.favSubjects = studAttributes.favSubjects;
     }
 
-    listsSubjects(){
+    listsSubjects() {
         // logs out each item of the student's favoriteSubjects array, one by one.
+        // let favSubj = this.favSubjects.forEach(function(subject) {
+        //     return subject;
+        //   });
+        console.log(this.favSubjects.toString());
     }
 
-    PRAssignment(subject){
+    PRAssignment(subject) {
         console.log(`${this.name} has submitted a PR for ${subject}`);
     }
 
-    sprintChallenge(){
+    sprintChallenge() {
         console.log(`${this.name} has begun sprint challenge on ${subject}`);
     }
 }
@@ -55,12 +63,50 @@ class ProjectManager extends Instructor {
         this.favInstructor = pmAttributes.favInstructor;
     }
 
-    standUp(channel){
+    standUp(channel) {
         console.log(`${this.name} announces to ${channel}, @channel standy times!`);
     }
 
-    debugsCode(student, subject){
+    debugsCode(student, subject) {
         console.log(`${this.name} debugs ${student.name}'s code on ${subject}`);
     }
-
 }
+
+////////////////////////////
+// Now build some people! //
+////////////////////////////
+
+const danLevy = new Instructor({
+    name: 'Dan Levy',
+    location: 'Denver?',
+    age: '32',
+    favLanguage: 'JavaScript',
+    specialty: 'FSW',
+    catchPhrase: `Don't listen to Rosie`
+});
+
+const joshKnell = new Instructor({
+    name: 'Josh Knell',
+    location: 'Georgia?',
+    age: '31',
+    favLanguage: 'Ruby',
+    specialty: 'banjo',
+    catchPhrase: `You got this!`
+});
+
+const avni = new Student({
+    name: 'Avni Patel Thompson',
+    location: 'Seattle',
+    age: '28',
+    favSubjects: ''
+});
+
+const virginia = new Student({
+    name: 'Virginia Thayer',
+    location: 'Seattle',
+    age: 36;
+    previousBackground: ,
+    className: 'WEB21',
+    favSubjects: ['LESS', 'JavaScript', 'Pseudo-classical inheritance']
+});
+
