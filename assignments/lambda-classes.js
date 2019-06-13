@@ -7,8 +7,8 @@ class Person {
         this.location = personAttributes.location;
     }
 
-    speak(){
-        console.log(`Hello my name is ${this.name}`, I am from ${this.location});
+    speak() {
+        console.log(`Hello my name is ${this.name}, I am from ${this.location}`);
     }
 }
 
@@ -19,12 +19,12 @@ class Instructor extends Person {
         this.favLanguage = instAttributes.favLanguage;
     }
     
-    demo(){
-
+    demo(subject){
+        console.log(`Today we are learning about ${subject}`);
     }
 
-    grade() {
-
+    grade(student, subject) {
+        console.log(`${student.name} receives a perfect score on ${subject}`);
     }
 }
 
@@ -37,15 +37,15 @@ class Student extends Person {
     }
 
     listsSubjects(){
-
+        // logs out each item of the student's favoriteSubjects array, one by one.
     }
 
-    PRAssignment(){
-
+    PRAssignment(subject){
+        console.log(`${this.name} has submitted a PR for ${subject}`);
     }
 
     sprintChallenge(){
-
+        console.log(`${this.name} has begun sprint challenge on ${subject}`);
     }
 }
 
@@ -55,12 +55,12 @@ class ProjectManager extends Instructor {
         this.favInstructor = pmAttributes.favInstructor;
     }
 
-    standUp(){
-
+    standUp(channel){
+        console.log(`${this.name} announces to ${channel}, @channel standy times!`);
     }
 
-    debugsCode(){
-
+    debugsCode(student, subject){
+        console.log(`${this.name} debugs ${student.name}'s code on ${subject}`);
     }
 
 }
