@@ -42,10 +42,6 @@ class Student extends Person {
     }
 
     listsSubjects() {
-        // logs out each item of the student's favoriteSubjects array, one by one.
-        // let favSubj = this.favSubjects.forEach(function(subject) {
-        //     return subject;
-        //   });
         console.log(this.favSubjects.toString());
     }
 
