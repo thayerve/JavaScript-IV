@@ -60,7 +60,7 @@ class ProjectManager extends Instructor {
     }
 
     debugsCode(){
-        
+
     }
 
 }
